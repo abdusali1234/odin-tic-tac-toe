@@ -2,7 +2,7 @@ class Board
     attr_reader :board, :new_board
 
     def initialize
-        @board = Array.new(9) { |x| x + 1}
+        @board = Array.new(9) { |x| x + 1 }
     end
 
     def display_board
@@ -13,6 +13,11 @@ class Board
         --+---+--
         #{board[6]} | #{board[7]} | #{board[8]}
         HEREDOC
+    end
+
+    def update_board(symbol, board_num)
+        board[board_num - 1] = symbol
+        display_board
     end
 
 end
