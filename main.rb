@@ -1,5 +1,5 @@
-require_relative 'lib/board.rb'
+require_relative 'lib/tictactoe'
 
-board = Board
+game = Game.new
 
-board.display_board
+game.start_game

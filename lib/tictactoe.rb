@@ -11,13 +11,14 @@ class Game
 
     def assign_player_one
         puts "Player 1, please enter your name: "
-        @player_one = Player(gets.chomp, 'X')
+        @player_one = Player.new(gets.chomp, 'X')
         @current_player = player_one
+        
     end
 
     def assign_player_two
         puts "Player 2, please enter your name: "
-        @player_one = Player(gets.chomp, 'O')
+        @player_two = Player.new(gets.chomp, 'O')
     end
 
 
@@ -36,7 +37,7 @@ class Game
           move = game_move
           game_board.update_board(current_player.symbol, move)
           if current_player.player_wins?(game_board)
-            current_player.congratulate_winner
+            current_player.winner_message
             break
           end
           @current_player = change_current_player

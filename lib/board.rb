@@ -40,7 +40,7 @@ class Board
     end
 
     def can_play_square?(board_pos)
-        return true if board[board_pos - 1].is_a?(Numeric)
+        return board[board_pos - 1].is_a?(Numeric) ? true : false
     end
 
 end
