@@ -15,8 +15,8 @@ class Board
         HEREDOC
     end
 
-    def update_board(symbol, board_num)
-        board[board_num - 1] = symbol
+    def update_board(symbol, board_pos)
+        board[board_pos - 1] = symbol
         display_board
     end
 
@@ -37,9 +37,10 @@ class Board
                 board[pos] == symbol
             end
         end
+    end
 
-
-
+    def can_play_square?(board_pos)
+        return true if board[board_pos - 1].is_a?(Numeric)
     end
 
 end
